@@ -9,7 +9,7 @@ export default function Search() {
     fetchSuggestions();
   },[searchTerm])
   const fetchSuggestions = () => {
-    fetch("http://localhost:5000/author_suggestions")
+    fetch("https://busitron-api-assignment.onrender.com/author_suggestions")
      .then((response) => response.json())
      .then((data) => {
         setSuggestions(data?.result);
@@ -20,7 +20,7 @@ export default function Search() {
 
   const SearchResult = async (searchValue) => {
     try{
-      const response = await fetch(`http://localhost:5000/search/${searchValue}`);
+      const response = await fetch(`https://busitron-api-assignment.onrender.com/search/${searchValue}`);
       const resultData = await response.json();
       setSearchData(resultData?.result);
       
