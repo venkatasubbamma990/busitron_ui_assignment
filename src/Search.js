@@ -45,9 +45,8 @@ export default function Search() {
         }}
       >
         <Autocomplete
-          id={`category-`}
           options={suggestions}
-          name="category"
+          name="suggestion"
           getOptionLabel={(option) => option}
           onChange={(e ,  value) => {
             console.log("value" , value)
@@ -55,7 +54,7 @@ export default function Search() {
             setSearchTerm(value);
           }}
           renderInput={(params) => (
-            <TextField {...params} placeholder="Select Category" />
+            <TextField {...params} placeholder="Search Here..." />
           )}
           fullWidth
         />
